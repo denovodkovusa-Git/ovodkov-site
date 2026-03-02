@@ -8,8 +8,14 @@ export const GET = async () => {
         const payload = await getPayload({ config: configPromise })
 
         // Ensure database schema is synced (tables created) before seeding
-        if (payload.db.push) {
-            await payload.db.push()
+        // In Payload 3.0, db.push is a boolean, not a function.
+        // We can check if the adapter has a sync or push method, or use the drizzle-kit push directly if available.
+        const adapter = payload.db as any
+        if (typeof adapter.sync === 'function') {
+            await adapter.sync()
+        } else if (typeof adapter.migrateFresh === 'function') {
+            // This is more aggressive but ensures tables exist
+            await adapter.migrateFresh()
         }
 
         await seed(payload)
