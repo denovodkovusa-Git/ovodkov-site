@@ -18,7 +18,6 @@ export const seed = async (payload: Payload) => {
             data: {
                 email: 'info@ovodkov.ru',
                 password: 'password', // User should change this after first login
-                name: 'Admin',
             },
         })
         payload.logger.info('Admin user created: info@ovodkov.ru')
