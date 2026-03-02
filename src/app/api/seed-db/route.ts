@@ -16,6 +16,7 @@ export const GET = async () => {
                 email: 'info@ovodkov.ru',
                 password: 'password123',
             },
+            overrideAccess: true,
         }).catch(err => console.log('User already exists or error:', err.message))
 
         // 2. Create products directly
@@ -27,7 +28,8 @@ export const GET = async () => {
         for (const prod of products) {
             await payload.create({
                 collection: 'products',
-                data: { ...prod, _status: 'published' }
+                data: { ...prod, _status: 'published' },
+                overrideAccess: true,
             }).catch(err => console.log(`Product ${prod.slug} skip:`, err.message))
         }
 
