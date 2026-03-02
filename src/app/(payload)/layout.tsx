@@ -9,6 +9,8 @@ import React from 'react'
 import { importMap } from './admin/importMap.js'
 import './custom.scss'
 
+import ErrorBoundary from '@/components/ErrorBoundary'
+
 type Args = {
   children: React.ReactNode
 }
@@ -25,9 +27,11 @@ const serverFunction: ServerFunctionClient = async function (args) {
 export const dynamic = 'force-dynamic'
 
 const Layout = ({ children }: Args) => (
-  <RootLayout config={config} importMap={importMap} serverFunction={serverFunction}>
-    {children}
-  </RootLayout>
+  <ErrorBoundary>
+    <RootLayout config={config} importMap={importMap} serverFunction={serverFunction}>
+      {children}
+    </RootLayout>
+  </ErrorBoundary>
 )
 
 export default Layout
