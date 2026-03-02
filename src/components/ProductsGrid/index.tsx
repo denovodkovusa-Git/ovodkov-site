@@ -5,13 +5,18 @@ import { ProductCard } from '../ProductCard'
 import Link from 'next/link'
 
 export const ProductsGrid: React.FC = async () => {
-    const payload = await getPayload({ config: configPromise })
+    let products: { docs: any[] } = { docs: [] }
 
-    const products = await payload.find({
-        collection: 'products',
-        limit: 100,
-        sort: '-createdAt',
-    })
+    try {
+        const payload = await getPayload({ config: configPromise })
+        products = await payload.find({
+            collection: 'products',
+            limit: 100,
+            sort: '-createdAt',
+        })
+    } catch (error) {
+        console.error('Error in ProductsGrid (fetch):', error)
+    }
 
     return (
         <section className="bg-black py-48">

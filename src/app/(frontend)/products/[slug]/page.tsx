@@ -4,6 +4,26 @@ import { notFound } from 'next/navigation'
 import { getPayload } from 'payload'
 import config from '@/payload.config'
 
+export async function generateStaticParams() {
+    try {
+        const payload = await getPayload({ config })
+        const products = await payload.find({
+            collection: 'products',
+            draft: false,
+            limit: 1000,
+            pagination: false,
+            select: {
+                slug: true,
+            },
+        })
+
+        return products.docs.map(({ slug }) => ({ slug }))
+    } catch (error) {
+        console.error('Error in generateStaticParams (products):', error)
+        return []
+    }
+}
+
 export default async function ProductPage({ params: paramsPromise }: { params: Promise<{ slug: string }> }) {
     const { slug } = await paramsPromise
     const payload = await getPayload({ config })
