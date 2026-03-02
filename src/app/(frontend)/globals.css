@@ -123,6 +123,9 @@
   --success: oklch(78% 0.08 200deg);
   --warning: oklch(89% 0.1 75deg);
   --error: oklch(75% 0.15 25deg);
+  --accent-vivid: #FF6600;
+  --glow-orange: 0 0 20px rgba(255, 102, 0, 0.4);
+  --glow-orange-intense: 0 0 40px rgba(255, 102, 0, 0.7);
 }
 
 [data-theme='dark'] {
@@ -203,6 +206,21 @@
   --color-success: var(--success);
   --color-warning: var(--warning);
   --color-error: var(--error);
+  --color-accent-vivid: var(--accent-vivid);
+}
+
+@layer utilities {
+  .bork-glow {
+    box-shadow: var(--glow-orange);
+    transition: box-shadow 0.5s ease-in-out, filter 0.5s ease-in-out;
+  }
+  .bork-glow:hover {
+    box-shadow: var(--glow-orange-intense);
+    filter: brightness(1.2);
+  }
+  .bork-text-glow {
+    text-shadow: 0 0 10px rgba(255, 102, 0, 0.3);
+  }
 }
 
 @layer base {
