@@ -29,7 +29,7 @@ export const Products: CollectionConfig = {
             name: 'photo',
             type: 'upload',
             relationTo: 'media',
-            required: true,
+            required: false,
             label: 'Фото',
         },
         slugField(),
