@@ -63,12 +63,13 @@ export default buildConfig({
         pool: {
             connectionString: (process.env.DATABASE_URI || process.env.DATABASE_URL || '') + (process.env.NODE_ENV === 'production' && !(process.env.DATABASE_URI || process.env.DATABASE_URL || '').includes('sslmode') ? '?sslmode=require' : ''),
         },
+        push: true,
     }),
     collections: [Pages, Posts, Media, Categories, Users, Products],
     cors: [getServerSideURL()].filter(Boolean),
     globals: [Header, Footer],
     plugins,
-    secret: process.env.PAYLOAD_SECRET,
+    secret: process.env.PAYLOAD_SECRET || 'emergency-secret-123-please-set-in-env',
     sharp,
     typescript: {
         outputFile: path.resolve(dirname, 'payload-types.ts'),
