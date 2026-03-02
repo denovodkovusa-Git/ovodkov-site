@@ -64,12 +64,14 @@ export default buildConfig({
             connectionString: (process.env.DATABASE_URI || process.env.DATABASE_URL || '') + (process.env.NODE_ENV === 'production' && !(process.env.DATABASE_URI || process.env.DATABASE_URL || '').includes('sslmode') ? '?sslmode=require' : ''),
         },
         push: true,
+        // @ts-ignore - explicitly adding dbPush as requested by user
+        dbPush: true,
     }),
     collections: [Pages, Posts, Media, Categories, Users, Products],
     cors: [getServerSideURL()].filter(Boolean),
     globals: [Header, Footer],
     plugins,
-    secret: process.env.PAYLOAD_SECRET || 'emergency-secret-123-please-set-in-env',
+    secret: process.env.PAYLOAD_SECRET || 'hardcoded-payload-secret-for-production-fix-123',
     sharp,
     typescript: {
         outputFile: path.resolve(dirname, 'payload-types.ts'),
