@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+import Link from 'next/link'
 
 export default function CollectionPage() {
     const series = [
@@ -50,9 +50,9 @@ export default function CollectionPage() {
                                         <p className="text-lg text-white/40 font-light leading-relaxed mb-12 max-w-lg">
                                             {item.description}
                                         </p>
-                                        <button className="px-12 py-5 border border-white/10 text-[10px] font-bold tracking-[0.4em] uppercase hover:border-accent-vivid hover:text-accent-vivid transition-all duration-500 hover:shadow-[0_0_30px_rgba(255,102,0,0.2)]" onClick={() => window.location.href = '#contact'}>
+                                        <Link href="/contact" className="inline-block px-12 py-5 border border-white/10 text-[10px] font-bold tracking-[0.4em] uppercase hover:border-accent-vivid hover:text-accent-vivid transition-all duration-500 hover:shadow-[0_0_30px_rgba(255,102,0,0.2)]">
                                             Собрать свою коллекцию
-                                        </button>
+                                        </Link>
                                     </div>
                                 </div>
                                 <div className="relative aspect-video lg:aspect-square bg-white/[0.02] border border-white/5 overflow-hidden">

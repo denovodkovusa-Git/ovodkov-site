@@ -4,16 +4,16 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 
+
 import type { Header } from '@/payload-types'
 
 import { Logo } from '@/components/Logo/Logo'
-import { HeaderNav } from './Nav'
 
 interface HeaderClientProps {
   data: Header
 }
 
-export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
+export const HeaderClient: React.FC<HeaderClientProps> = () => {
   /* Storing the value in a useState to avoid hydration errors */
   const [theme, setTheme] = useState<string | null>(null)
   const { headerTheme, setHeaderTheme } = useHeaderTheme()
@@ -35,9 +35,14 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
         <Link href="/" className="group">
           <div className="flex items-center gap-3">
             <Logo loading="eager" priority="high" className="w-10 h-10 invert dark:invert-0 opacity-80 group-hover:opacity-100 transition-opacity" />
-            <span className="text-white text-2xl font-black uppercase tracking-tighter brand-text-glow leading-none">
-              METAL CABINET FURNITURE
-            </span>
+            <div className="flex flex-col">
+              <span className="text-white text-2xl font-black uppercase tracking-tighter brand-text-glow leading-none">
+                OVODKOV
+              </span>
+              <span className="text-accent-vivid text-[10px] font-bold tracking-[0.4em] uppercase opacity-60">
+                & CO • METAL ONLY
+              </span>
+            </div>
           </div>
         </Link>
 

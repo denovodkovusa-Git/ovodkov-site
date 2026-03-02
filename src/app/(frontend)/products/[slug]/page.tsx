@@ -1,12 +1,11 @@
 import React from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getPayload } from 'payload'
 import config from '@/payload.config'
 
-export default async function ProductPage({ params }: { params: { slug: string } }) {
-    const { slug } = await params
+export default async function ProductPage({ params: paramsPromise }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await paramsPromise
     const payload = await getPayload({ config })
 
     const { docs: products } = await payload.find({

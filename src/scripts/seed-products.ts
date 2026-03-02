@@ -73,6 +73,7 @@ async function seed() {
         // 2. Create Product
         const productDoc = await payload.create({
             collection: 'products',
+            draft: true,
             data: {
                 title: item.title,
                 description: item.description,

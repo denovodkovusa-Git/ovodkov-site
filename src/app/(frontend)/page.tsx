@@ -1,8 +1,7 @@
-import PageTemplate, { generateMetadata } from './[slug]/page'
+import { generateMetadata } from './[slug]/page'
 import { ProductsGrid } from '@/components/ProductsGrid'
-import React from 'react'
 
-export default async function Page(props: any) {
+export default async function Page() {
     return (
         <main className="flex flex-col bg-black min-h-screen">
             {/* Hero Section */}

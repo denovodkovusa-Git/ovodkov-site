@@ -36,7 +36,7 @@ export default function AboutPage() {
                     <div className="absolute top-0 right-0 w-1/3 h-full bg-accent-vivid/5 blur-[120px] rounded-full translate-x-1/2" />
                     <div className="max-w-4xl">
                         <h2 className="text-4xl font-bold uppercase tracking-tighter mb-12 italic text-white/90">
-                            "Металл — это честный материал. Он не притворяется деревом, он служит вечно. Мы превращаем его в уют."
+                            &quot;Металл — это честный материал. Он не притворяется деревом, он служит вечно. Мы превращаем его в уют.&quot;
                         </h2>
                         <div className="flex items-center gap-6">
                             <div className="w-12 h-px bg-white/20" />

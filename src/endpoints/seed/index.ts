@@ -102,7 +102,6 @@ export const seed = async ({
     payload.create({
       collection: 'users',
       data: {
-        name: 'Demo Author',
         email: 'demo-author@example.com',
         password: 'password',
       },

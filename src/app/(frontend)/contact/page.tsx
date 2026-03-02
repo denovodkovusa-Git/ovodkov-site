@@ -9,7 +9,7 @@ export default function ContactPage() {
                         <header className="mb-24">
                             <div className="w-20 h-px bg-accent-vivid mb-12" />
                             <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-none mb-12">
-                                Professional <br /><span className="text-accent-vivid italic font-thin opacity-80 bork-text-glow">Support</span>
+                                Premium <br /><span className="text-accent-vivid italic font-thin opacity-80 brand-text-glow">Service</span>
                             </h1>
                             <p className="text-xl text-white/40 font-light leading-relaxed max-w-md uppercase tracking-widest">
                                 Наши эксперты готовы помочь вам с проектированием и подбором оборудования.
@@ -23,7 +23,7 @@ export default function ContactPage() {
                             </div>
                             <div>
                                 <h3 className="text-[10px] font-bold tracking-[0.5em] uppercase text-white/20 mb-4">Email</h3>
-                                <p className="text-3xl font-light tracking-tighter text-white hover:text-accent-vivid transition-colors cursor-pointer">industrial@bork.ru</p>
+                                <p className="text-3xl font-light tracking-tighter text-white hover:text-accent-vivid transition-colors cursor-pointer">info@ovodkov.ru</p>
                             </div>
                             <div>
                                 <h3 className="text-[10px] font-bold tracking-[0.5em] uppercase text-white/20 mb-4">Boutique</h3>
@@ -50,7 +50,7 @@ export default function ContactPage() {
                                 <label className="text-[10px] font-bold tracking-[0.3em] uppercase text-white/40">Сообщение</label>
                                 <textarea rows={4} className="w-full bg-black border border-white/10 p-4 text-white focus:outline-none focus:border-accent-vivid transition-colors resize-none" />
                             </div>
-                            <button className="w-full bg-accent-vivid text-white py-6 text-xs font-bold uppercase tracking-[0.5em] bork-glow hover:bg-orange-500 transition-all active:scale-95">
+                            <button className="w-full bg-accent-vivid text-white py-6 text-xs font-bold uppercase tracking-[0.5em] brand-glow hover:bg-orange-500 transition-all active:scale-95">
                                 Отправить запрос
                             </button>
                         </form>

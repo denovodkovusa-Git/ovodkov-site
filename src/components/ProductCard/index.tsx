@@ -22,8 +22,8 @@ export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
                 <div className="mb-8">
                     <div className="flex items-center gap-3 mb-4">
                         <div className="w-10 h-[1px] bg-accent-vivid/50" />
-                        <h3 className="text-[9px] font-bold tracking-[0.5em] uppercase text-accent-vivid/80 bork-text-glow">
-                            Professional Series
+                        <h3 className="text-[9px] font-bold tracking-[0.5em] uppercase text-accent-vivid/80 brand-text-glow">
+                            Modular Metal System
                         </h3>
                     </div>
                     <h2 className="text-2xl font-light text-white leading-tight tracking-[0.1em] uppercase group-hover:text-white transition-colors">
@@ -40,14 +40,14 @@ export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
                 <div className="mt-auto pt-8 border-t border-white/5">
                     <div className="flex justify-between items-end">
                         <div className="flex flex-col">
-                            <span className="text-[8px] text-white/20 tracking-[0.4em] uppercase mb-2">Investment</span>
-                            <span className="text-2xl font-bold tracking-tighter text-accent-vivid bork-text-glow">
+                            <span className="text-[8px] text-white/20 tracking-[0.4em] uppercase mb-2">Heritage</span>
+                            <span className="text-2xl font-bold tracking-tighter text-accent-vivid brand-text-glow">
                                 {price.toLocaleString('ru-RU')} ₽
                             </span>
                         </div>
 
                         <button className="group/btn relative px-6 py-3 border border-accent-vivid/20 text-accent-vivid text-[9px] font-bold tracking-[0.4em] uppercase overflow-hidden transition-all duration-500 hover:border-accent-vivid hover:shadow-[0_0_20px_rgba(255,102,0,0.3)]">
-                            <span className="relative z-10 transition-colors duration-500 group-hover/btn:text-black">Buy Now</span>
+                            <span className="relative z-10 transition-colors duration-500 group-hover/btn:text-black">Собрать свою коллекцию</span>
                             <div className="absolute inset-0 bg-accent-vivid translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500 ease-out" />
                         </button>
                     </div>
