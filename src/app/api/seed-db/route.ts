@@ -30,6 +30,7 @@ export const GET = async () => {
                 collection: 'products',
                 data: { ...prod, _status: 'published' },
                 overrideAccess: true,
+                draft: true,
             }).catch(err => console.log(`Product ${prod.slug} skip:`, err.message))
         }
 
