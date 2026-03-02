@@ -21,7 +21,6 @@ const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 export default buildConfig({
-    serverURL: getServerSideURL(),
     admin: {
         components: {
             // The `BeforeLogin` component renders a message that you see while logging into your admin panel.
@@ -62,17 +61,14 @@ export default buildConfig({
     editor: defaultLexical,
     db: postgresAdapter({
         pool: {
-            connectionString: (process.env.DATABASE_URI || process.env.DATABASE_URL || '') + (process.env.NODE_ENV === 'production' && !(process.env.DATABASE_URI || process.env.DATABASE_URL || '').includes('sslmode') ? '?sslmode=require' : ''),
+            connectionString: (process.env.DATABASE_URI || process.env.DATABASE_URL || ''),
         },
-        push: true,
-        // @ts-ignore - explicitly adding dbPush as requested by user
-        dbPush: true,
     }),
     collections: [Pages, Posts, Media, Categories, Users, Products],
     cors: [getServerSideURL()].filter(Boolean),
     globals: [Header, Footer],
     plugins,
-    secret: process.env.PAYLOAD_SECRET || 'emergency-admin-secret-hardcoded-123456',
+    secret: process.env.PAYLOAD_SECRET || '',
     sharp,
     typescript: {
         outputFile: path.resolve(dirname, 'payload-types.ts'),
