@@ -14,7 +14,7 @@ const nextConfig = {
       headers: [
         {
           key: 'Content-Security-Policy',
-          value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://lh3.googleusercontent.com; font-src 'self' data:; connect-src 'self' http://localhost:3000; frame-ancestors 'none';",
+          value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://lh3.googleusercontent.com https://*.public.blob.vercel-storage.com; font-src 'self' data:; connect-src 'self' https://*.public.blob.vercel-storage.com; frame-ancestors 'none';",
         },
       ],
     },
@@ -27,6 +27,10 @@ const nextConfig = {
       },
       {
         hostname: 'lh3.googleusercontent.com',
+        protocol: 'https',
+      },
+      {
+        hostname: '*.public.blob.vercel-storage.com',
         protocol: 'https',
       },
     ],
