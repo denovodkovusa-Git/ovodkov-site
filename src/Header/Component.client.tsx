@@ -42,13 +42,17 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
         </Link>
 
         <nav className="flex items-center gap-16">
-          {['Коллекция', 'О бренде', 'Контакты'].map((item) => (
+          {[
+            { label: 'Коллекция', href: '/collection' },
+            { label: 'О бренде', href: '/about' },
+            { label: 'Контакты', href: '/contact' },
+          ].map((item) => (
             <Link
-              key={item}
-              href="#"
+              key={item.label}
+              href={item.href}
               className="text-[10px] font-bold tracking-[0.4em] uppercase text-white/40 hover:text-accent-vivid transition-all duration-500 hover:tracking-[0.5em]"
             >
-              {item}
+              {item.label}
             </Link>
           ))}
 

@@ -2,6 +2,7 @@ import React from 'react'
 import { getPayload } from 'payload'
 import configPromise from '@payload-config'
 import { ProductCard } from '../ProductCard'
+import Link from 'next/link'
 
 export const ProductsGrid: React.FC = async () => {
     const payload = await getPayload({ config: configPromise })
@@ -31,7 +32,9 @@ export const ProductsGrid: React.FC = async () => {
                 {products.docs.length > 0 ? (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                         {products.docs.map((product) => (
-                            <ProductCard key={product.id} product={product} />
+                            <Link key={product.id} href={`/products/${product.slug}`}>
+                                <ProductCard product={product} />
+                            </Link>
                         ))}
                     </div>
                 ) : (

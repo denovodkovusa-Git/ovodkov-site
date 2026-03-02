@@ -34,4 +34,7 @@ export const Products: CollectionConfig = {
         },
         slugField(),
     ],
+    versions: {
+        drafts: true,
+    },
 }

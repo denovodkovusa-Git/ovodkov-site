@@ -1,0 +1,49 @@
+{
+  "type": "GENERATE_PRODUCT_PAGE",
+  "product": {
+    "id": 1,
+    "title": "Печь для пиццы BORK P500",
+    "description": "Традиционный вкус в современном исполнении. Разогрев до 450°C за 15 минут.",
+    "price": 150000,
+    "photo": {
+      "id": 5,
+      "alt": "Placeholder",
+      "caption": null,
+      "folder": null,
+      "updatedAt": "2026-03-02T14:31:00.403Z",
+      "createdAt": "2026-03-02T14:31:00.402Z",
+      "url": "/api/media/file/placeholder-1.png",
+      "thumbnailURL": null,
+      "filename": "placeholder-1.png",
+      "mimeType": "image/png",
+      "filesize": 67,
+      "width": 1,
+      "height": 1,
+      "focalX": 50,
+      "focalY": 50,
+      "sizes": {
+        "thumbnail": {
+          "url": null,
+          "width": null,
+          "height": null,
+          "mimeType": null,
+          "filesize": null,
+          "filename": null
+        },
+        "card": {
+          "url": null,
+          "width": null,
+          "height": null,
+          "mimeType": null,
+          "filesize": null,
+          "filename": null
+        }
+      }
+    },
+    "generateSlug": false,
+    "slug": "bork-p500",
+    "updatedAt": "2026-03-02T14:31:00.415Z",
+    "createdAt": "2026-03-02T14:31:00.415Z"
+  },
+  "pagePath": "C:\\Projects\\Site\\bork-cms\\src\\app\\(frontend)\\products\\bork-p500\\page.tsx"
+}
