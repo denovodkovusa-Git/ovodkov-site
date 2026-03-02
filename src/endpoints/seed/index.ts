@@ -18,6 +18,7 @@ const collections: CollectionSlug[] = [
   'forms',
   'form-submissions',
   'search',
+  'products',
 ]
 
 const globals: GlobalSlug[] = ['header', 'footer']
@@ -76,7 +77,7 @@ export const seed = async ({
     depth: 0,
     where: {
       email: {
-        equals: 'demo-author@example.com',
+        equals: 'info@ovodkov.ru',
       },
     },
   })
@@ -102,9 +103,10 @@ export const seed = async ({
     payload.create({
       collection: 'users',
       data: {
-        email: 'demo-author@example.com',
+        email: 'info@ovodkov.ru',
         password: 'password',
-      },
+        name: 'Admin',
+      } as any,
     }),
     payload.create({
       collection: 'media',
@@ -135,6 +137,69 @@ export const seed = async ({
         },
       }),
     ),
+  ])
+
+  payload.logger.info(`— Seeding products...`)
+
+  const [product1Buffer, product2Buffer, product3Buffer, product4Buffer] = await Promise.all([
+    fetchFileByURL('https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&q=80&w=1000'),
+    fetchFileByURL('https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=1000'),
+    fetchFileByURL('https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&q=80&w=1000'),
+    fetchFileByURL('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=1000'),
+  ])
+
+  const [p1Img, p2Img, p3Img, p4Img] = await Promise.all([
+    payload.create({ collection: 'media', data: { alt: 'G900' }, file: product1Buffer }),
+    payload.create({ collection: 'media', data: { alt: 'K700' }, file: product2Buffer }),
+    payload.create({ collection: 'media', data: { alt: 'V600' }, file: product3Buffer }),
+    payload.create({ collection: 'media', data: { alt: 'P500' }, file: product4Buffer }),
+  ])
+
+  await Promise.all([
+    payload.create({
+      collection: 'products',
+      draft: false,
+      data: {
+        title: 'Модульный гриль-блок Ovodkov & Co G900',
+        description: 'Профессиональный угольный гриль с интеллектуальной системой контроля температуры. Выполнен из авиационного алюминия и жаропрочной нержавеющей стали. Идеальное решение для создания кулинарных шедевров на открытом воздухе.',
+        price: 850000,
+        photo: p1Img.id,
+        _status: 'published',
+      } as any,
+    }),
+    payload.create({
+      collection: 'products',
+      draft: false,
+      data: {
+        title: 'Стальной остров Ovodkov & Co K700',
+        description: 'Функциональный кухонный остров с интегрированной мойкой и рабочей поверхностью из натурального камня. Система организации хранения инструментов и аксессуаров. Лаконичный дизайн в стиле лофт.',
+        price: 1200000,
+        photo: p2Img.id,
+        _status: 'published',
+      } as any,
+    }),
+    payload.create({
+      collection: 'products',
+      draft: false,
+      data: {
+        title: 'Шкаф для вызревания мяса Ovodkov & Co V600',
+        description: 'Создает идеальный микроклимат для сухого вызревания говядины. Система фильтрации воздуха с активированным углем и точный контроль влажности. Панорамное остекление с защитой от УФ-лучей.',
+        price: 680000,
+        photo: p3Img.id,
+        _status: 'published',
+      } as any,
+    }),
+    payload.create({
+      collection: 'products',
+      draft: false,
+      data: {
+        title: 'Печь для пиццы Ovodkov & Co P500',
+        description: 'Традиционный вкус в современном исполнении. Разогрев до 450°C за 15 минут. Каменный под из вулканической лавы обеспечивает идеальную хрустящую корочку.',
+        price: 420000,
+        photo: p4Img.id,
+        _status: 'published',
+      } as any,
+    }),
   ])
 
   payload.logger.info(`— Seeding posts...`)
