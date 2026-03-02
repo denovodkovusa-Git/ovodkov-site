@@ -47,7 +47,7 @@ export const GET = async () => {
                 console.log(`Creating product: ${prod.title}`)
                 await payload.create({
                     collection: 'products',
-                    data: { ...prod, _status: 'published' },
+                    data: { ...prod, _status: 'published', photo: null as any },
                     overrideAccess: true,
                     draft: false,
                 })
