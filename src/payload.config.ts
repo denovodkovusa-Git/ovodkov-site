@@ -61,14 +61,9 @@ export default buildConfig({
     editor: defaultLexical,
     db: postgresAdapter({
         pool: {
-            connectionString: process.env.DATABASE_URI || process.env.DATABASE_URL || '',
+            connectionString: (process.env.DATABASE_URI || process.env.DATABASE_URL || '') + (process.env.NODE_ENV === 'production' && !(process.env.DATABASE_URI || process.env.DATABASE_URL || '').includes('sslmode') ? '?sslmode=require' : ''),
         },
     }),
-    onInit: async (payload) => {
-        if (process.env.SEED_DATABASE === 'true' || process.env.NODE_ENV === 'development') {
-            await seed(payload)
-        }
-    },
     collections: [Pages, Posts, Media, Categories, Users, Products],
     cors: [getServerSideURL()].filter(Boolean),
     globals: [Header, Footer],
