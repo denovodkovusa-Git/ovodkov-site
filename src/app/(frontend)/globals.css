@@ -4,11 +4,11 @@
 @config '../../../tailwind.config.mjs';
 
 @custom-variant dark (&:is([data-theme='dark'] *));
-@custom-variant sm (@media (width >= theme(--breakpoint-sm)));
-@custom-variant md (@media (width >= theme(--breakpoint-md)));
-@custom-variant lg (@media (width >= theme(--breakpoint-lg)));
-@custom-variant xl (@media (width >= theme(--breakpoint-xl)));
-@custom-variant 2xl (@media (width >= theme(--breakpoint-2xl)));
+@custom-variant sm (@media (width >=theme(--breakpoint-sm)));
+@custom-variant md (@media (width >=theme(--breakpoint-md)));
+@custom-variant lg (@media (width >=theme(--breakpoint-lg)));
+@custom-variant xl (@media (width >=theme(--breakpoint-xl)));
+@custom-variant 2xl (@media (width >=theme(--breakpoint-2xl)));
 
 @layer base {
   h1,
@@ -210,15 +210,17 @@
 }
 
 @layer utilities {
-  .bork-glow {
+  .brand-glow {
     box-shadow: var(--glow-orange);
     transition: box-shadow 0.5s ease-in-out, filter 0.5s ease-in-out;
   }
-  .bork-glow:hover {
+
+  .brand-glow:hover {
     box-shadow: var(--glow-orange-intense);
     filter: brightness(1.2);
   }
-  .bork-text-glow {
+
+  .brand-text-glow {
     text-shadow: 0 0 10px rgba(255, 102, 0, 0.3);
   }
 }
@@ -227,6 +229,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground min-h-[100vh] flex flex-col;
   }

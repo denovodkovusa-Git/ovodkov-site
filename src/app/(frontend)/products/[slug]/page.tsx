@@ -31,7 +31,7 @@ export default async function ProductPage({ params }: { params: { slug: string }
                 <div className="container relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div className="space-y-8 animate-in fade-in slide-in-from-left duration-1000">
                         <div className="inline-flex items-center px-3 py-1 border border-accent-vivid/30 bg-accent-vivid/10 rounded-full text-[10px] tracking-[0.2em] uppercase text-accent-vivid font-bold">
-                            Professional Series
+                            Modular Metal System
                         </div>
                         <h1 className="text-6xl md:text-8xl font-bold tracking-tighter uppercase leading-none">
                             {product.title}
@@ -40,11 +40,11 @@ export default async function ProductPage({ params }: { params: { slug: string }
                             {product.description}
                         </p>
                         <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center pt-4">
-                            <span className="text-4xl font-bold text-accent-vivid bork-text-glow">
+                            <span className="text-4xl font-bold text-accent-vivid brand-text-glow">
                                 {product.price.toLocaleString('ru-RU')} ₽
                             </span>
-                            <button className="bg-accent-vivid text-white px-10 py-5 text-sm font-bold uppercase tracking-[0.2em] bork-glow hover:bg-orange-500 transition-all active:scale-95">
-                                Добавить в корзину
+                            <button className="bg-accent-vivid text-white px-10 py-5 text-sm font-bold uppercase tracking-[0.2em] brand-glow hover:bg-orange-500 transition-all active:scale-95">
+                                Собрать свою коллекцию
                             </button>
                         </div>
                     </div>
@@ -119,7 +119,7 @@ export default async function ProductPage({ params }: { params: { slug: string }
                         Создайте свою <br /> идеальную кухню
                     </h2>
                     <button className="bg-black text-white px-12 py-6 text-sm font-bold uppercase tracking-[0.3em] hover:bg-zinc-900 transition-all active:scale-95">
-                        Консультация эксперта
+                        Заказать проект
                     </button>
                 </div>
             </section>
