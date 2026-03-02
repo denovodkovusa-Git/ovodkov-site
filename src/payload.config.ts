@@ -33,6 +33,18 @@ export default buildConfig({
         importMap: {
             baseDir: path.resolve(dirname),
         },
+        // @ts-expect-error - webpack is available in Payload 3.x for aliasing server-only modules
+        webpack: (config: any) => ({
+            ...config,
+            resolve: {
+                ...config.resolve,
+                alias: {
+                    ...config.resolve?.alias,
+                    [path.resolve(dirname, 'plugins/storage/server')]: path.resolve(dirname, 'plugins/storage/client'),
+                    '@payloadcms/storage-vercel-blob': false,
+                },
+            },
+        }),
         user: Users.slug,
         livePreview: {
             breakpoints: [
