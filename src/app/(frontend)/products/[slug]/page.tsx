@@ -28,20 +28,27 @@ export default async function ProductPage({ params: paramsPromise }: { params: P
     const { slug } = await paramsPromise
     const payload = await getPayload({ config })
 
-    const { docs: products } = await payload.find({
-        collection: 'products',
-        where: {
-            slug: {
-                equals: slug,
-            },
-        },
-    })
+    let product = null
 
-    if (!products.length) {
+    try {
+        const { docs: products } = await payload.find({
+            collection: 'products',
+            where: {
+                slug: {
+                    equals: slug,
+                },
+            },
+        })
+
+        if (!products.length) {
+            notFound()
+        }
+
+        product = products[0]
+    } catch (error) {
+        console.error('Error fetching product:', error)
         notFound()
     }
-
-    const product = products[0]
 
     return (
         <div data-theme="dark" className="bg-background text-foreground min-h-screen font-sans selection:bg-accent-vivid selection:text-white">

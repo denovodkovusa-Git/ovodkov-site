@@ -15,6 +15,7 @@ import { Header } from './Header/config'
 import { plugins } from './plugins'
 import { defaultLexical } from '@/fields/defaultLexical'
 import { getServerSideURL } from './utilities/getURL'
+import { seed } from './utilities/seed'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -63,6 +64,11 @@ export default buildConfig({
             connectionString: process.env.DATABASE_URI || process.env.DATABASE_URL || '',
         },
     }),
+    onInit: async (payload) => {
+        if (process.env.SEED_DATABASE === 'true' || process.env.NODE_ENV === 'development') {
+            await seed(payload)
+        }
+    },
     collections: [Pages, Posts, Media, Categories, Users, Products],
     cors: [getServerSideURL()].filter(Boolean),
     globals: [Header, Footer],
