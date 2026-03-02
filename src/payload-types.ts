@@ -752,8 +752,9 @@ export interface Product {
   id: number;
   title: string;
   description?: string | null;
+  category?: (number | Category)[] | null;
   price: number;
-  photo: number | Media;
+  photo?: (number | null) | Media;
   /**
    * When enabled, the slug will auto-generate from the title field on save and autosave.
    */
@@ -1299,6 +1300,7 @@ export interface UsersSelect<T extends boolean = true> {
 export interface ProductsSelect<T extends boolean = true> {
   title?: T;
   description?: T;
+  category?: T;
   price?: T;
   photo?: T;
   generateSlug?: T;
