@@ -8,7 +8,7 @@ export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
     return (
         <div className="group flex flex-col h-full bg-[#0a0a0a] border border-white/5 rounded-none overflow-hidden transition-all duration-700 hover:border-accent-vivid/30 hover:bg-[#0f0f0f] shadow-2xl hover:shadow-[0_0_50px_rgba(255,102,0,0.1)]">
             <div className="relative aspect-square overflow-hidden bg-zinc-900">
-                {photo && typeof photo !== 'number' && (
+                {typeof photo === 'object' && photo !== null && (
                     <Media
                         resource={photo}
                         fill
