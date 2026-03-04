@@ -1,4 +1,3 @@
-'use server'
 import 'server-only'
 import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 import { Media } from '../../collections/Media'
