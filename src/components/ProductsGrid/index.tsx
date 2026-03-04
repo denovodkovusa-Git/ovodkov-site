@@ -14,6 +14,7 @@ export const ProductsGrid: React.FC = async () => {
             limit: 100,
             sort: '-createdAt',
             depth: 1,
+            draft: false,
             overrideAccess: true,
         })
     } catch (error) {

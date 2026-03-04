@@ -11,6 +11,7 @@ export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
                 {photo && typeof photo !== 'number' && (
                     <Media
                         resource={photo}
+                        fill
                         className="object-cover w-full h-full opacity-70 group-hover:opacity-100 transition-opacity duration-700 ease-in-out"
                     />
                 )}
