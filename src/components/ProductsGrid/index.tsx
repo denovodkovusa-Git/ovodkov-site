@@ -14,7 +14,7 @@ export const ProductsGrid: React.FC = async () => {
             limit: 100,
             sort: '-createdAt',
             depth: 1,
-            overrideAccess: false,
+            overrideAccess: true,
         })
     } catch (error) {
         console.error('Error in ProductsGrid (fetch):', error)
