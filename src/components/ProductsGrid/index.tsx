@@ -19,7 +19,7 @@ export const ProductsGrid: React.FC = async () => {
     }
 
     return (
-        <section className="bg-black pt-32 pb-24">
+        <section className="bg-black pt-48 pb-24 relative z-10">
             <div className="container mx-auto px-6">
                 <header className="flex flex-col mb-12 max-w-4xl">
                     <div className="w-12 h-px bg-accent-vivid/40 mb-6" />
