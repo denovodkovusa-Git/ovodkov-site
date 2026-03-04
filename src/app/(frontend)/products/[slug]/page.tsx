@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import { getPayload } from 'payload'
 import config from '@/payload.config'
 import Link from 'next/link'
+import { getBlurDataURL } from '@/utilities/generateBlurPlaceholder'
 
 export const revalidate = 60
 
@@ -84,6 +85,14 @@ export default async function ProductPage({ params: paramsPromise }: { params: P
         notFound()
     }
 
+    // Generate Blur Data URL
+    let blurDataURL: string | undefined = undefined;
+    if (typeof product.photo === 'object' && product.photo !== null) {
+        // Prefer thumbnail for generating the tiny blur placeholder faster, if available
+        const urlToBlur = product.photo?.sizes?.thumbnail?.url || product.photo.url;
+        blurDataURL = await getBlurDataURL(urlToBlur);
+    }
+
     return (
         <div data-theme="dark" className="bg-background text-foreground min-h-screen font-sans selection:bg-accent-vivid selection:text-white">
             {/* Hero Section */}
@@ -115,6 +124,7 @@ export default async function ProductPage({ params: paramsPromise }: { params: P
                                 fill
                                 className="object-cover w-full h-full drop-shadow-[0_0_50px_rgba(255,102,0,0.15)]"
                                 priority
+                                blurDataURL={blurDataURL}
                             />
                         )}
                     </div>
