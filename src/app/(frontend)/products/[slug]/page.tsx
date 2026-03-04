@@ -38,7 +38,7 @@ export default async function ProductPage({ params: paramsPromise }: { params: P
     try {
         const { docs: products } = await payload.find({
             collection: 'products',
-            depth: 1,
+            depth: 2,
             draft: false,
             overrideAccess: true,
             where: {
@@ -109,11 +109,11 @@ export default async function ProductPage({ params: paramsPromise }: { params: P
                         </div>
                     </div>
                     <div className="relative h-[60vh] lg:h-full w-full bg-zinc-900 animate-in fade-in duration-700 ease-in-out delay-300">
-                        {product.photo && typeof product.photo === 'object' && (
+                        {typeof product.photo === 'object' && product.photo !== null && (
                             <Media
                                 resource={product.photo}
                                 fill
-                                className="object-contain drop-shadow-[0_0_50px_rgba(255,102,0,0.15)]"
+                                className="object-cover w-full h-full drop-shadow-[0_0_50px_rgba(255,102,0,0.15)]"
                                 priority
                             />
                         )}
