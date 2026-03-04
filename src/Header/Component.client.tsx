@@ -7,8 +7,6 @@ import React, { useEffect, useState } from 'react'
 
 import type { Header } from '@/payload-types'
 
-import { Logo } from '@/components/Logo/Logo'
-
 interface HeaderClientProps {
   data: Header
 }
@@ -33,11 +31,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = () => {
     <header className="fixed top-0 left-0 w-full z-[999] transition-all duration-500 bg-black/90 backdrop-blur-md border-b border-white/10" {...(theme ? { 'data-theme': theme } : {})}>
       <div className="container mx-auto px-6 py-6 flex justify-between items-center">
         <Link href="/" className="group flex items-center gap-3">
-          <Logo loading="eager" priority="high" className="w-10 h-10 invert dark:invert-0 opacity-80 group-hover:opacity-100 transition-opacity" />
-          <div className="flex items-center gap-1">
-            <span className="text-white font-extrabold text-2xl tracking-tight">Ovodkov &</span>
-            <span className="text-red-600 font-extrabold text-2xl tracking-tight">[AI Lab]</span>
-          </div>
+          <div className="flex items-center gap-1"><span className="text-white font-extrabold text-2xl tracking-tight">Ovodkov &</span><span className="text-red-600 font-extrabold text-2xl tracking-tight">[AI Lab]</span></div>
         </Link>
 
         <nav className="flex items-center gap-16">
