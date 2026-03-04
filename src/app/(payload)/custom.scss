@@ -1,58 +1,46 @@
 // Custom Payload Admin Styles
-// Purpose: Enlarge media thumbnails across the backend UI for better visibility
+// Purpose: Enlarge media thumbnails across the backend UI for better visibility in Payload 3.x
 
-// 1. Enlarge thumbnails in the Collection List (Grid/Table view)
-.cell-thumbnail {
-    min-width: 15rem !important; // 240px
-    width: 15rem !important;
+// Aggressively target any thumbnail or preview component container
+.thumbnail-card__thumbnail,
+.thumbnail,
+[class*="__thumbnail"],
+[class*="thumbnail-wrapper"],
+.file-details__preview,
+[class*="file-preview"],
+.list-drawer__media {
+    min-width: 16rem !important; // 256px
+    min-height: 16rem !important;
+    width: auto !important;
+    height: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
 
+    // Target the raw image tag inside these containers
     img {
-        max-height: 15rem !important;
-        max-width: 15rem !important;
+        max-width: 16rem !important;
+        max-height: 16rem !important;
+        width: 100% !important;
+        height: 100% !important;
         object-fit: contain !important;
+        border-radius: 4px;
+        background-color: var(--theme-elevation-50);
     }
 }
 
-// 2. Enlarge the preview image block inside the "Edit Document" standard Upload field
+// Special case for the narrow grid/table cells so the column expands
+.cell-thumbnail,
+th#heading-thumbnail,
+td.cell-thumbnail {
+    min-width: 16rem !important;
+    width: 16rem !important;
+}
+
+// Ensure the main Upload preview container breaks out of tight flex bounds
 .file-details {
-    .file-details__preview {
-        min-width: 20rem !important; // 320px
-        min-height: 20rem !important;
-        width: 20rem !important;
-
-        img {
-            width: 100% !important;
-            height: 100% !important;
-            max-width: 20rem !important;
-            max-height: 20rem !important;
-            object-fit: contain !important;
-        }
-    }
-}
-
-// 3. Enlarge thumbnails inside Modal Drawers (e.g. "Choose Existing")
-.list-drawer {
-    .thumbnail {
-        min-width: 15rem !important; // 240px
-        min-height: 15rem !important;
-
-        img {
-            max-height: 15rem !important;
-            max-width: 15rem !important;
-            object-fit: contain !important;
-        }
-    }
-}
-
-// Global thumbnail enforcement
-.thumbnail {
-    min-width: 15rem !important;
-    min-height: 15rem !important;
     display: flex;
-    align-items: center;
-    justify-content: center;
-
-    img {
-        object-fit: contain !important;
-    }
+    gap: 2rem !important;
+    align-items: flex-start !important;
 }
