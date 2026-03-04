@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+import { Media } from '@/components/Media'
 import { notFound } from 'next/navigation'
 import { getPayload } from 'payload'
 import config from '@/payload.config'
@@ -76,11 +76,10 @@ export default async function ProductPage({ params: paramsPromise }: { params: P
                             </button>
                         </div>
                     </div>
-                    <div className="relative h-[60vh] lg:h-full w-full animate-in fade-in zoom-in duration-1000 delay-300">
+                    <div className="relative h-[60vh] lg:h-full w-full bg-zinc-900 animate-in fade-in duration-700 ease-in-out delay-300">
                         {product.photo && typeof product.photo === 'object' && (
-                            <Image
-                                src={product.photo.url || ''}
-                                alt={product.title}
+                            <Media
+                                resource={product.photo}
                                 fill
                                 className="object-contain drop-shadow-[0_0_50px_rgba(255,102,0,0.15)]"
                                 priority

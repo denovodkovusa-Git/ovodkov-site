@@ -7,11 +7,11 @@ export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
 
     return (
         <div className="group flex flex-col h-full bg-[#0a0a0a] border border-white/5 rounded-none overflow-hidden transition-all duration-700 hover:border-accent-vivid/30 hover:bg-[#0f0f0f] shadow-2xl hover:shadow-[0_0_50px_rgba(255,102,0,0.1)]">
-            <div className="relative aspect-square overflow-hidden bg-black">
+            <div className="relative aspect-square overflow-hidden bg-zinc-900">
                 {photo && typeof photo !== 'number' && (
                     <Media
                         resource={photo}
-                        className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-1000 ease-out opacity-70 group-hover:opacity-100"
+                        className="object-cover w-full h-full opacity-70 group-hover:opacity-100 transition-opacity duration-700 ease-in-out"
                     />
                 )}
                 {/* Matte Overlay */}
