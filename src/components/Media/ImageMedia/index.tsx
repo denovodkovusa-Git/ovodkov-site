@@ -4,7 +4,7 @@ import type { StaticImageData } from 'next/image'
 
 import { cn } from '@/utilities/ui'
 import NextImage from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 
 import type { Props as MediaProps } from '../types'
 
@@ -14,6 +14,7 @@ import { getMediaUrl } from '@/utilities/getMediaUrl'
 const { breakpoints } = cssVariables
 
 export const ImageMedia: React.FC<MediaProps> = (props) => {
+  const [isLoaded, setIsLoaded] = useState(false)
   const {
     alt: altFromProps,
     fill,
@@ -59,7 +60,8 @@ export const ImageMedia: React.FC<MediaProps> = (props) => {
         alt={alt || ''}
         className={cn(
           imgClassName,
-          'animate-in fade-in duration-700 ease-in-out'
+          'transition-opacity duration-700 ease-in-out',
+          isLoaded ? 'opacity-100' : 'opacity-0'
         )}
         fill={fill}
         height={!fill ? height : undefined}
@@ -70,6 +72,7 @@ export const ImageMedia: React.FC<MediaProps> = (props) => {
         src={src}
         width={!fill ? width : undefined}
         {...(blurDataURL ? { placeholder: 'blur', blurDataURL } : {})}
+        onLoad={() => setIsLoaded(true)}
       />
     </picture>
   )
