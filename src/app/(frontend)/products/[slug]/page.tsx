@@ -4,6 +4,8 @@ import { notFound } from 'next/navigation'
 import { getPayload } from 'payload'
 import config from '@/payload.config'
 
+export const revalidate = 60
+
 export async function generateStaticParams() {
     try {
         const payload = await getPayload({ config })

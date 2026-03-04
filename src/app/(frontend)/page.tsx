@@ -1,6 +1,8 @@
 import { generateMetadata } from './[slug]/page'
 import { ProductsGrid } from '@/components/ProductsGrid'
 
+export const revalidate = 60
+
 export default async function Page() {
     return (
         <main className="flex flex-col bg-black min-h-screen">
