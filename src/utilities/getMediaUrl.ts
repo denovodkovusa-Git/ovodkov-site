@@ -18,7 +18,7 @@ export const getMediaUrl = (url: string | null | undefined, cacheTag?: string | 
     return cacheTag ? `${url}?${cacheTag}` : url
   }
 
-  // Otherwise prepend client-side URL
-  const baseUrl = getClientSideURL()
-  return cacheTag ? `${baseUrl}${url}?${cacheTag}` : `${baseUrl}${url}`
+  // Otherwise, return the relative URL natively. Next.js <Image /> components
+  // flawlessly optimize relative URLs without external domain checks.
+  return cacheTag ? `${url}?${cacheTag}` : url
 }

@@ -7,7 +7,7 @@ export default function AboutPage() {
                 <header className="max-w-5xl mb-48">
                     <div className="w-20 h-px bg-accent-vivid mb-12" />
                     <h1 className="text-6xl md:text-9xl font-black uppercase tracking-tighter leading-[0.85] mb-16">
-                        Metal <br />& <span className="text-accent-vivid opacity-80 brand-text-glow font-thin italic">Future</span>
+                        ИИ <br />и <span className="text-accent-vivid opacity-80 brand-text-glow font-thin italic">Металл</span>
                     </h1>
                     <p className="text-2xl text-white/40 font-light leading-snug max-w-3xl uppercase tracking-widest">
                         Ovodkov & AI Lab — эксперты в создании мебели для экстремальных условий.
