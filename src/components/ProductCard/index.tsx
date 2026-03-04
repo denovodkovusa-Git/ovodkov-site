@@ -23,7 +23,7 @@ export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
                     <div className="flex items-center gap-3 mb-4">
                         <div className="w-10 h-[1px] bg-accent-vivid/50" />
                         <h3 className="text-[9px] font-bold tracking-[0.5em] uppercase text-accent-vivid/80 brand-text-glow">
-                            Modular Metal System
+                            Модульная металлическая система
                         </h3>
                     </div>
                     <h2 className="text-2xl font-light text-white leading-tight tracking-[0.1em] uppercase group-hover:text-white transition-colors">
@@ -40,7 +40,7 @@ export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
                 <div className="mt-auto pt-8 border-t border-white/5">
                     <div className="flex justify-between items-end">
                         <div className="flex flex-col">
-                            <span className="text-[8px] text-white/20 tracking-[0.4em] uppercase mb-2">Heritage</span>
+                            <span className="text-[8px] text-white/20 tracking-[0.4em] uppercase mb-2">Наследие</span>
                             <span className="text-2xl font-bold tracking-tighter text-accent-vivid brand-text-glow">
                                 {price.toLocaleString('ru-RU')} ₽
                             </span>

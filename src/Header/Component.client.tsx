@@ -40,7 +40,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = () => {
                 OVODKOV
               </span>
               <span className="text-accent-vivid text-[10px] font-bold tracking-[0.4em] uppercase opacity-60">
-                & CO • METAL ONLY
+                & CO • ТОЛЬКО МЕТАЛЛ
               </span>
             </div>
           </div>

@@ -9,7 +9,7 @@ export default async function Page() {
             {/* Reduced Hero Section / Tagline Section */}
             <div className="py-20 flex flex-col items-center justify-center text-center px-6 border-y border-white/5">
                 <h2 className="text-[11px] font-bold tracking-[0.8em] uppercase text-accent-vivid mb-8 animate-in fade-in slide-in-from-bottom-4 duration-1000 brand-text-glow">
-                    Est. 2024
+                    Осн. 2024
                 </h2>
                 <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-[0.85] mb-12 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 uppercase">
                     МЕБЕЛЬ ИЗ <span className="text-accent-vivid italic font-thin opacity-80 brand-text-glow">МЕТАЛЛА</span>
@@ -42,8 +42,8 @@ export default async function Page() {
                         </div>
                         <div className="flex-1 w-full aspect-square bg-gradient-to-br from-[#111] to-black border border-white/10 flex items-center justify-center relative overflow-hidden group shadow-[0_0_100px_rgba(0,0,0,0.5)]">
                             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,102,0,0.03)_0%,_transparent_70%)]" />
-                            <div className="text-[160px] font-black text-accent-vivid opacity-5 tracking-tighter select-none group-hover:scale-110 group-hover:opacity-10 transition-all duration-[4000ms] ease-out uppercase leading-none text-center">
-                                METAL<br />ONLY
+                            <div className="text-[140px] font-black text-accent-vivid opacity-5 tracking-tighter select-none group-hover:scale-110 group-hover:opacity-10 transition-all duration-[4000ms] ease-out uppercase leading-none text-center">
+                                ТОЛЬКО<br />МЕТАЛЛ
                             </div>
                             <div className="absolute bottom-16 right-16 text-[10px] text-white/10 tracking-[0.6em] uppercase font-bold">
                                 OVODKOV & CO

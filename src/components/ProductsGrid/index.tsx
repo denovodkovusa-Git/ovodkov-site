@@ -24,10 +24,10 @@ export const ProductsGrid: React.FC = async () => {
                 <header className="flex flex-col mb-12 max-w-4xl">
                     <div className="w-12 h-px bg-accent-vivid/40 mb-6" />
                     <h2 className="text-[10px] font-bold tracking-[0.6em] uppercase text-accent-vivid/60 mb-4 brand-text-glow">
-                        Collection — 2026
+                        Коллекция — 2026
                     </h2>
                     <h1 className="text-4xl md:text-6xl font-light text-white tracking-tighter leading-tight uppercase">
-                        Garden Kitchen <br /><span className="text-white/20 italic font-thin">Solutions</span>
+                        Решения для загородной <br /><span className="text-white/20 italic font-thin">кухни</span>
                     </h1>
                 </header>
 
@@ -42,7 +42,7 @@ export const ProductsGrid: React.FC = async () => {
                 ) : (
                     <div className="text-center py-48 bg-[#050505] border border-white/5 rounded-none">
                         <p className="text-white/20 font-light tracking-[0.4em] uppercase text-[10px]">
-                            Inventory In Transition
+                            Обновление ассортимента
                         </p>
                     </div>
                 )}

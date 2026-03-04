@@ -1,4 +1,4 @@
-import 'server-only'
+
 import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 import { Media } from '../../collections/Media'
 import { Plugin } from 'payload'
