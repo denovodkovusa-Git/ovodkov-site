@@ -30,7 +30,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = () => {
   }, [headerTheme])
 
   return (
-    <header className="fixed top-0 left-0 w-full z-[100] transition-all duration-500 bg-black/0 hover:bg-black/40 backdrop-blur-0 hover:backdrop-blur-md border-b border-transparent hover:border-white/10" {...(theme ? { 'data-theme': theme } : {})}>
+    <header className="fixed top-0 left-0 w-full z-[999] transition-all duration-500 bg-black/90 backdrop-blur-md border-b border-white/10" {...(theme ? { 'data-theme': theme } : {})}>
       <div className="container mx-auto px-6 py-6 flex justify-between items-center">
         <Link href="/" className="group">
           <div className="flex items-center gap-3">
