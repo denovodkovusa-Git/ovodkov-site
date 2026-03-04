@@ -9,8 +9,8 @@ const defaultOpenGraph: Metadata['openGraph'] = {
       url: `${getServerSideURL()}/ovodkov-og.webp`,
     },
   ],
-  siteName: 'Ovodkov & Co',
-  title: 'Ovodkov & Co',
+  siteName: 'Ovodkov & AI Lab',
+  title: 'Ovodkov & AI Lab',
 }
 
 export const mergeOpenGraph = (og?: Metadata['openGraph']): Metadata['openGraph'] => {

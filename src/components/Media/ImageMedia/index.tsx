@@ -4,7 +4,7 @@ import type { StaticImageData } from 'next/image'
 
 import { cn } from '@/utilities/ui'
 import NextImage from 'next/image'
-import React, { useState } from 'react'
+import React from 'react'
 
 import type { Props as MediaProps } from '../types'
 
@@ -25,8 +25,6 @@ export const ImageMedia: React.FC<MediaProps> = (props) => {
     src: srcFromProps,
     loading: loadingFromProps,
   } = props
-
-  const [isLoading, setIsLoading] = useState(true)
 
   let width: number | undefined
   let height: number | undefined
@@ -60,8 +58,7 @@ export const ImageMedia: React.FC<MediaProps> = (props) => {
         alt={alt || ''}
         className={cn(
           imgClassName,
-          'transition-opacity duration-700 ease-in-out',
-          isLoading ? 'opacity-0' : 'opacity-100'
+          'animate-in fade-in duration-700 ease-in-out'
         )}
         fill={fill}
         height={!fill ? height : undefined}
@@ -71,7 +68,6 @@ export const ImageMedia: React.FC<MediaProps> = (props) => {
         sizes={sizes}
         src={src}
         width={!fill ? width : undefined}
-        onLoad={() => setIsLoading(false)}
       />
     </picture>
   )

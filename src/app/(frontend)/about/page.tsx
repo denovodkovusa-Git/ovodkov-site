@@ -10,7 +10,7 @@ export default function AboutPage() {
                         Metal <br />& <span className="text-accent-vivid opacity-80 brand-text-glow font-thin italic">Future</span>
                     </h1>
                     <p className="text-2xl text-white/40 font-light leading-snug max-w-3xl uppercase tracking-widest">
-                        Ovodkov & Co — эксперты в создании мебели для экстремальных условий.
+                        Ovodkov & AI Lab — эксперты в создании мебели для экстремальных условий.
                         Наша металлическая мебель не боится влаги, мороза и времени.
                     </p>
                 </header>

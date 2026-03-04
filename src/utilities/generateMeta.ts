@@ -27,8 +27,8 @@ export const generateMeta = async (args: {
   const ogImage = getImageURL(doc?.meta?.image)
 
   const title = doc?.meta?.title
-    ? doc?.meta?.title + ' | Ovodkov & Co | Металлическая мебель'
-    : 'Ovodkov & Co | Металлическая мебель'
+    ? doc?.meta?.title + ' | Ovodkov & AI Lab | Металлическая мебель'
+    : 'Ovodkov & AI Lab | Металлическая мебель'
 
   return {
     description: doc?.meta?.description,

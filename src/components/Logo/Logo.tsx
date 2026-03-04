@@ -13,7 +13,7 @@ export const Logo = (props: Props) => {
   return (
     <div className={clsx('flex items-center', className)}>
       <span className="text-white text-2xl font-black uppercase tracking-tighter brand-text-glow leading-none">
-        OVODKOV & CO
+        OVODKOV & AI Lab
       </span>
     </div>
   )

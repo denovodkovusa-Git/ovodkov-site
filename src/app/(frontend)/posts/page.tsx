@@ -63,6 +63,6 @@ export default async function Page() {
 
 export function generateMetadata(): Metadata {
   return {
-    title: `Posts — Ovodkov & Co`,
+    title: `Posts — Ovodkov & AI Lab`,
   }
 }

@@ -29,7 +29,7 @@ export default async function Page() {
                     <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-40 items-center">
                         <div className="flex-1">
                             <h2 className="text-[11px] font-bold tracking-[0.5em] uppercase text-accent-vivid/40 mb-12 brand-text-glow">
-                                Концепция Ovodkov & Co
+                                Концепция Ovodkov & AI Lab
                             </h2>
                             <p className="text-5xl md:text-6xl font-light text-white leading-[1.05] tracking-tighter mb-20 uppercase">
                                 Мебель для <span className="text-accent-vivid">загородной жизни</span>. В отличие от ДСП, наш металл не боится влаги.
@@ -48,7 +48,7 @@ export default async function Page() {
                                 ТОЛЬКО<br />МЕТАЛЛ
                             </div>
                             <div className="absolute bottom-16 right-16 text-[10px] text-white/10 tracking-[0.6em] uppercase font-bold">
-                                OVODKOV & CO
+                                OVODKOV & AI Lab
                             </div>
                         </div>
                     </div>
