@@ -3,6 +3,7 @@ import { Media } from '@/components/Media'
 import { notFound } from 'next/navigation'
 import { getPayload } from 'payload'
 import config from '@/payload.config'
+import Link from 'next/link'
 
 export const revalidate = 60
 
@@ -31,10 +32,15 @@ export default async function ProductPage({ params: paramsPromise }: { params: P
     const payload = await getPayload({ config })
 
     let product = null
+    let prevProduct = null
+    let nextProduct = null
 
     try {
         const { docs: products } = await payload.find({
             collection: 'products',
+            depth: 1,
+            draft: false,
+            overrideAccess: true,
             where: {
                 slug: {
                     equals: slug,
@@ -42,11 +48,37 @@ export default async function ProductPage({ params: paramsPromise }: { params: P
             },
         })
 
+        // Fetch all product slugs to determine next/prev
+        const allProductsData = await payload.find({
+            collection: 'products',
+            draft: false,
+            overrideAccess: true,
+            limit: 1000,
+            select: {
+                slug: true,
+                title: true,
+            },
+            sort: '-createdAt'
+        })
+
         if (!products.length) {
             notFound()
         }
 
         product = products[0]
+
+        // Find Next / Prev logic
+        const currentIndex = allProductsData.docs.findIndex(p => p.slug === slug)
+
+        let prevProductTemp = null;
+        let nextProductTemp = null;
+
+        if (currentIndex > 0) prevProductTemp = allProductsData.docs[currentIndex - 1]
+        if (currentIndex < allProductsData.docs.length - 1) nextProductTemp = allProductsData.docs[currentIndex + 1]
+
+        prevProduct = prevProductTemp;
+        nextProduct = nextProductTemp;
+
     } catch (error) {
         console.error('Error fetching product:', error)
         notFound()
@@ -135,6 +167,37 @@ export default async function ProductPage({ params: paramsPromise }: { params: P
                                 </div>
                             ))}
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Product Navigation */}
+            <section className="py-12 border-t border-white/5">
+                <div className="container">
+                    <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
+                        {prevProduct ? (
+                            <Link href={`/products/${prevProduct.slug}`} className="group flex items-center gap-4 text-white/50 hover:text-accent-vivid transition-all duration-300">
+                                <span className="text-2xl font-light transform group-hover:-translate-x-2 transition-transform">←</span>
+                                <div className="flex flex-col text-left">
+                                    <span className="text-[9px] font-bold tracking-[0.3em] uppercase opacity-50">Предыдущий</span>
+                                    <span className="text-sm uppercase tracking-widest font-bold">{prevProduct.title}</span>
+                                </div>
+                            </Link>
+                        ) : <div />}
+
+                        <Link href="/" className="text-[10px] font-bold tracking-[0.4em] uppercase text-white/40 hover:text-white transition-colors">
+                            В каталог
+                        </Link>
+
+                        {nextProduct ? (
+                            <Link href={`/products/${nextProduct.slug}`} className="group flex items-center gap-4 text-white/50 hover:text-accent-vivid transition-all duration-300 text-right">
+                                <div className="flex flex-col text-right">
+                                    <span className="text-[9px] font-bold tracking-[0.3em] uppercase opacity-50">Следующий</span>
+                                    <span className="text-sm uppercase tracking-widest font-bold">{nextProduct.title}</span>
+                                </div>
+                                <span className="text-2xl font-light transform group-hover:translate-x-2 transition-transform">→</span>
+                            </Link>
+                        ) : <div />}
                     </div>
                 </div>
             </section>

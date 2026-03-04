@@ -35,11 +35,11 @@ export const HeaderClient: React.FC<HeaderClientProps> = () => {
         <Link href="/" className="group">
           <div className="flex items-center gap-3">
             <Logo loading="eager" priority="high" className="w-10 h-10 invert dark:invert-0 opacity-80 group-hover:opacity-100 transition-opacity" />
-            <div className="flex flex-col">
-              <span className="text-white text-2xl font-black uppercase tracking-tighter brand-text-glow leading-none">
+            <div className="flex flex-col mt-1">
+              <span className="text-white text-2xl font-black uppercase tracking-tight brand-text-glow leading-none">
                 OVODKOV
               </span>
-              <span className="text-accent-vivid text-[10px] font-bold tracking-[0.4em] uppercase opacity-60">
+              <span className="text-accent-vivid text-[10px] font-bold tracking-[0.3em] uppercase opacity-70 mt-1">
                 & AI LAB
               </span>
             </div>

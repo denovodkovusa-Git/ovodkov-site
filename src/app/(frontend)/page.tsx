@@ -14,7 +14,7 @@ export default async function Page() {
                     Осн. 2024
                 </h2>
                 <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-[0.85] mb-12 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 uppercase">
-                    МЕБЕЛЬ ИЗ <span className="text-accent-vivid italic font-thin opacity-80 brand-text-glow">МЕТАЛЛА</span>
+                    РЕШЕНИЯ ДЛЯ ЗАГОРОДНОЙ <span className="text-accent-vivid italic font-thin opacity-80 brand-text-glow">ЖИЗНИ</span>
                 </h1>
                 <p className="max-w-3xl text-white/40 text-xs md:text-sm font-light uppercase tracking-[0.2em] leading-relaxed animate-in fade-in duration-1000 delay-400">
                     Безупречное сочетание премиальной эстетики и металлической надежности. <br />
