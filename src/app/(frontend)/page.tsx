@@ -4,21 +4,21 @@ import { ProductsGrid } from '@/components/ProductsGrid'
 export default async function Page() {
     return (
         <main className="flex flex-col bg-black min-h-screen">
-            {/* Hero Section */}
-            <div className="pt-48 pb-24 min-h-[80vh] flex flex-col items-center justify-center text-center px-6">
-                <h2 className="text-[11px] font-bold tracking-[0.8em] uppercase text-accent-vivid mb-12 animate-in fade-in slide-in-from-bottom-4 duration-1000 brand-text-glow">
+            <ProductsGrid />
+
+            {/* Reduced Hero Section / Tagline Section */}
+            <div className="py-20 flex flex-col items-center justify-center text-center px-6 border-y border-white/5">
+                <h2 className="text-[11px] font-bold tracking-[0.8em] uppercase text-accent-vivid mb-8 animate-in fade-in slide-in-from-bottom-4 duration-1000 brand-text-glow">
                     Est. 2024
                 </h2>
-                <h1 className="text-6xl md:text-[10rem] font-black text-white tracking-tighter leading-[0.85] mb-20 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 uppercase">
-                    МЕБЕЛЬ ИЗ<br /><span className="text-accent-vivid italic font-thin opacity-80 brand-text-glow">МЕТАЛЛА</span>
+                <h1 className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-[0.85] mb-12 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 uppercase">
+                    МЕБЕЛЬ ИЗ <span className="text-accent-vivid italic font-thin opacity-80 brand-text-glow">МЕТАЛЛА</span>
                 </h1>
-                <p className="max-w-3xl text-white/40 text-lg md:text-2xl font-light uppercase tracking-widest leading-relaxed mb-20 animate-in fade-in duration-1000 delay-400">
-                    Устойчивость к влаге, морозу и времени. <br />Передовой дизайн в модульном исполнении.
+                <p className="max-w-3xl text-white/40 text-xs md:text-sm font-light uppercase tracking-[0.2em] leading-relaxed animate-in fade-in duration-1000 delay-400">
+                    Безупречное сочетание премиальной эстетики и металлической надежности. <br />
+                    В отличие от ДСП, наша мебель не боится влаги, мороза и времени.
                 </p>
-                <div className="w-px h-40 bg-gradient-to-b from-accent-vivid/40 to-transparent animate-in fade-in zoom-in duration-1000 delay-500" />
             </div>
-
-            <ProductsGrid />
 
             {/* Rebranded About Section - The Lego Concept */}
             <section className="bg-black py-72 border-t border-white/5 relative overflow-hidden">
@@ -55,5 +55,6 @@ export default async function Page() {
         </main>
     )
 }
+
 
 export { generateMetadata }
